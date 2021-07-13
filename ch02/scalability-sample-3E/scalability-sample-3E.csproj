@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>scalability_sample_3E</RootNamespace>
+    <UserSecretsId>c0c21ca2-afb6-440e-b93b-f10c83bfcb28</UserSecretsId>
+  </PropertyGroup>
+
+</Project>
