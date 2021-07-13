@@ -5,11 +5,11 @@ on:
     - main
 env:
   AZURE_WEBAPP_NAME: scalability-sample-3E
-  AZURE_WEBAPP_PACKAGE_PATH: scalability-sample-3E/publish
+  AZURE_WEBAPP_PACKAGE_PATH: ch02/scalability-sample-3E/publish
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.scalability_sample_3E_3942 }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 6.0.x
-  WORKING_DIRECTORY: scalability-sample-3E
+  WORKING_DIRECTORY: ch02/scalability-sample-3E
 jobs:
   build-and-deploy:
     runs-on: windows-latest
