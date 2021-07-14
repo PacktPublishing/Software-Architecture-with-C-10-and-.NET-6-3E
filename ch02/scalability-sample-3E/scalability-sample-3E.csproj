@@ -6,4 +6,8 @@
     <UserSecretsId>c0c21ca2-afb6-440e-b93b-f10c83bfcb28</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
 </Project>

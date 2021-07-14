@@ -7,7 +7,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "ResourceGroup2E",
+      "defaultValue": "ResourceGroup3rd",
       "metadata": {
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
       }
@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "scalability-sample-2E",
+      "defaultValue": "scalability-sample-3E",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
