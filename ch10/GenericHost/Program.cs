@@ -15,6 +15,7 @@ namespace GenericHost
             Console.WriteLine("Host has terminated. Press any key to finish the App.");
             Console.ReadKey();
         }
+
         public static IHostBuilder CreateHostBuilder() =>
             Host.CreateDefaultBuilder()
             .ConfigureServices((hostContext, services) =>
