@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>dotnet-GrpcMicroService-7C802780-D742-4087-9CB7-470DF6CB14ED</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Binaron.Serializer" Version="4.1.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.18.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.39.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0-rc.1.21451.13" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="Protos\messages.proto" GrpcServices="Client" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GrpcMicroServiceStore\GrpcMicroServiceStore.csproj" />
+  </ItemGroup>
+</Project>
