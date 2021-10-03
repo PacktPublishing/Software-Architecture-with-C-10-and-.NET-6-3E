@@ -104,7 +104,7 @@ namespace CodeMetricsBadCode
 
         private static void CorrectFileStreamManagementFirstOption()
         {
-            FileStream file = new FileStream("C:\\file.txt", FileMode.CreateNew);
+            FileStream file = new("C:\\file.txt", FileMode.CreateNew);
             try
             {
                 byte[] data = GetFileData();
@@ -117,23 +117,21 @@ namespace CodeMetricsBadCode
         }
         private static void CorrectFileStreamManagementSecondOption()
         {
-            using (FileStream file = new FileStream("C:\\file.txt", FileMode.CreateNew))
-            {
-                byte[] data = GetFileData();
-                file.Write(data, 0, data.Length);
-            }
+            using FileStream file = new("C:\\file.txt", FileMode.CreateNew);
+            byte[] data = GetFileData();
+            file.Write(data, 0, data.Length);
         }
 
         private static void CorrectFileStreamManagementThirdOption()
         {
-            using FileStream file = new FileStream("C:\\file.txt", FileMode.CreateNew);
+            using FileStream file = new ("C:\\file.txt", FileMode.CreateNew);
             byte[] data = GetFileData();
             file.Write(data, 0, data.Length);
         }
         
         private static void CodeWithIncorrectFileStreamManagement()
         {
-            FileStream file = new FileStream("C:\\file.txt", FileMode.CreateNew);
+            FileStream file = new ("C:\\file.txt", FileMode.CreateNew);
             byte[] data = GetFileData();
             file.Write(data, 0, data.Length);
         }
@@ -176,17 +174,17 @@ namespace CodeMetricsBadCode
 
         private static void SampleDepthOfInheritance()
         {
-            SampleClass01 class01 = new SampleClass01();
+            SampleClass01 class01 = new ();
             class01.DoJob();
 
-            SampleClass02 class02 = new SampleClass02();
-            class01.DoJob();
+            SampleClass02 class02 = new ();
+            class02.DoJob();
 
-            SampleClass03 class03 = new SampleClass03();
-            class01.DoJob();
+            SampleClass03 class03 = new ();
+            class03.DoJob();
 
-            SampleClass04 class04 = new SampleClass04();
-            class01.DoJob();
+            SampleClass04 class04 = new ();
+            class04.DoJob();
         }
 
 
