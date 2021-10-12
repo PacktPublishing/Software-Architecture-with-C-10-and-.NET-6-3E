@@ -6,7 +6,7 @@ namespace performance_issues
 {
     /// <summary>
     /// This simple program will give you good insights for writing good performance and 
-    /// reusable code - Gabriel Lara Baptista - Software Architecture with C# 9 and .NET 5.0
+    /// reusable code - Gabriel Lara Baptista - Software Architecture with C# 10 and .NET 6.0
     /// </summary>
     class Program
     {
