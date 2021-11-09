@@ -11,22 +11,15 @@ namespace Cognitive
         private static async Task<string> PostAPI(string api, string key, string region, string textToTranslate)
         {
             using var client = new HttpClient();
-            using var request = new HttpRequestMessage(HttpMethod.Post, api);
-
-            request.Headers.Add("Ocp-Apim-Subscription-Key", key);
-            request.Headers.Add("Ocp-Apim-Subscription-Region", region);
-
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Region", region);
             client.Timeout = TimeSpan.FromSeconds(5);
 
             var body = new[] { new { Text = textToTranslate } };
             var requestBody = JsonConvert.SerializeObject(body);
-
-            request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-
-            var response = await client.SendAsync(request);
-
+            var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(api, content);
             response.EnsureSuccessStatusCode();
-
             return await response.Content.ReadAsStringAsync();
         }
 
