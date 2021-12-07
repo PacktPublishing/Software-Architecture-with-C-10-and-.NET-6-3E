@@ -11,7 +11,7 @@ namespace DesignPatternsSample.FactorySample.ProductInterface
         /// <summary>
         /// Money that will be charged
         /// </summary>
-        float MoneyToCharge { get; set; }
+        decimal MoneyToCharge { get; set; }
         
         /// <summary>
         /// Credit Card or Debit Card

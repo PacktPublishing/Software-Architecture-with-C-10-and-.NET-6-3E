@@ -7,7 +7,7 @@ namespace DesignPatternsSample.FactorySample.ConcreteProduct
     class BrazilianPaymentService : IPaymentService
     {
         public string EmailToCharge { get ; set ; }
-        public float MoneyToCharge { get ; set ; }
+        public decimal MoneyToCharge { get ; set ; }
         public EnumChargingOptions OptionToCharge { get ; set ; }
 
         public bool ProcessCharging()

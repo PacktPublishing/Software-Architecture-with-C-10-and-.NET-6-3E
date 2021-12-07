@@ -30,17 +30,17 @@ namespace DesignPatternsSample
             #region Factory Sample
 
             ProcessCharging(PaymentServiceFactory.ServicesAvailable.Brazilian,
-                "gabriel@sample.com", 178.90f, EnumChargingOptions.CreditCard);
+                "gabriel@sample.com", 178.90m, EnumChargingOptions.CreditCard);
 
             ProcessCharging(PaymentServiceFactory.ServicesAvailable.Italian,
-                "francesco@sample.com", 188.70f, EnumChargingOptions.DebitCard);
+                "francesco@sample.com", 188.70m, EnumChargingOptions.DebitCard);
 
             #endregion
 
             #region Singleton Sample
             Console.WriteLine("Singleton Sample");
             SingletonDemo.Current.Message = "This text will be printed by " +
-                "the singleton.";
+                "the singleton.  Be careful with concurrency.";
             SingletonDemo.Current.Print();
             #endregion
             
@@ -136,7 +136,7 @@ namespace DesignPatternsSample
         }
 
         private static void ProcessCharging(PaymentServiceFactory.ServicesAvailable serviceToCharge, 
-            string emailToCharge, float moneyToCharge, EnumChargingOptions optionToCharge)
+            string emailToCharge, decimal moneyToCharge, EnumChargingOptions optionToCharge)
         {
             PaymentServiceFactory factory = new PaymentServiceFactory();
             var service = factory.Create(serviceToCharge);
