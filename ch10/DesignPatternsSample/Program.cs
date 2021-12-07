@@ -8,6 +8,8 @@ using DesignPatternsSample.FactorySample.Enums;
 using DesignPatternsSample.ProxySample.Proxy;
 using DesignPatternsSample.ProxySample.Subject;
 using DesignPatternsSample.SingletonSample;
+using System;
+using System.Threading;
 
 namespace DesignPatternsSample
 {
