@@ -1,4 +1,6 @@
-﻿namespace WWTravelClubREST60.DTOs;
+﻿using System;
+
+namespace WWTravelClubREST60.DTOs;
 
 public record PackagesListDTO
 {

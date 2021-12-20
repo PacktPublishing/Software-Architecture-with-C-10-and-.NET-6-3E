@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WWTravelClubREST60.DTOs;
 
 namespace WWTravelClubREST60.Controllers;
@@ -38,7 +42,7 @@ public class PackagesController : ControllerBase
         }
         catch (Exception err)
         {
-            return StatusCode(500, err);
+            return StatusCode(500, err.ToString());
         }
     }
 }
