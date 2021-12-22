@@ -6,20 +6,24 @@ namespace CodeMetricsGoodCode
 {
     class Program
     {
-        delegate void CheckResultMethod(BillingMode billingMode, CreditCardProcessingResult messageResponse);
+        delegate CreditCardProcessingResult CheckResultMethod(BillingMode billingMode, CreditCardProcessingResult messageResponse);
         static void Main()
         {
             var billingMode = GetBillingMode();
             var messageResponse = ProcessCreditCardMethod();
+            #region Option using switch expression
+            CheckResult(messageResponse, billingMode);
+            #endregion
+
+            #region Option using Dictionary
             var methodsForCheckingResult = GetMethodsForCheckingResult();
             if (methodsForCheckingResult.ContainsKey(messageResponse))
                 methodsForCheckingResult[messageResponse](billingMode, messageResponse);
             else
                 Console.WriteLine("The result of processing is unknown");
-            
+            #endregion
         }
 
-      
         private static Dictionary<CreditCardProcessingResult, CheckResultMethod> GetMethodsForCheckingResult()
         {
             var methods = new Dictionary<CreditCardProcessingResult, CheckResultMethod>();
@@ -34,68 +38,89 @@ namespace CodeMetricsGoodCode
             return methods;
         }
 
-        private static void CheckResultSucceed(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResult(CreditCardProcessingResult messageResponse, BillingMode billingMode) => messageResponse switch
+        {
+            CreditCardProcessingResult.ResultA => CheckResultA(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultB => CheckResultB(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultC => CheckResultC(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultD => CheckResultD(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultE => CheckResultE(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultF => CheckResultF(billingMode, messageResponse),
+            CreditCardProcessingResult.ResultG => CheckResultG(billingMode, messageResponse),
+            CreditCardProcessingResult.Succeed => CheckResultSucceed(billingMode, messageResponse),
+            _ => throw new ArgumentOutOfRangeException(nameof(messageResponse), $"Not expected value: {messageResponse}"),
+        };
+
+        private static CreditCardProcessingResult CheckResultSucceed(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode08)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultG(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultG(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode07)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultF(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultF(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode06)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultE(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultE(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode05)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultD(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultD(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode04)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultC(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultC(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode03)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultB(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultB(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode02)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
-        private static void CheckResultA(BillingMode billingMode, CreditCardProcessingResult messageResponse)
+        private static CreditCardProcessingResult CheckResultA(BillingMode billingMode, CreditCardProcessingResult messageResponse)
         {
             if (billingMode == BillingMode.Mode01)
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
             else
                 Console.WriteLine($"Billing Mode {billingMode} for Message Response {messageResponse}");
+            return messageResponse;
         }
 
         /// <summary>
