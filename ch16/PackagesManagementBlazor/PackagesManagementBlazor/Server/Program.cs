@@ -9,8 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddDbLayer(builder.Configuration
-                .GetConnectionString("DefaultConnection"),
-                "PackagesManagementDB");
+                .GetConnectionString("DefaultConnection"));
 builder.Services.AddAllQueries(typeof(ICommand).Assembly);
 
 var app = builder.Build();
