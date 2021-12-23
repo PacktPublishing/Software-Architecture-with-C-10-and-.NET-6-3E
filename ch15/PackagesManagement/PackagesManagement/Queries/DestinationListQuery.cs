@@ -19,7 +19,7 @@ namespace PackagesManagement.Queries
         {
             return (await ctx.Destinations.Select(m => new
             {
-                Text = m.Country,
+                Text = m.Name,
                 Value = m.Id
             })
             .OrderBy(m => m.Text)
