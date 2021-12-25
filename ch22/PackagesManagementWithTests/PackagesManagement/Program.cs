@@ -13,8 +13,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages();
-        builder.Services.AddDbLayer(builder.Configuration.GetConnectionString("DefaultConnection"),
-            "PackagesManagementDB");
+        builder.Services.AddDbLayer(builder.Configuration.GetConnectionString("DefaultConnection"));
 
         builder.Services.AddAllQueries(typeof(ManagePackagesController).Assembly);
         builder.Services.AddAllCommandHandlers(typeof(ManagePackagesController).Assembly);

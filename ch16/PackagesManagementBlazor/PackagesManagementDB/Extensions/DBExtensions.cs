@@ -12,10 +12,10 @@ namespace PackagesManagementDB.Extensions
     public static class DBExtensions
     {
         public static IServiceCollection AddDbLayer(this IServiceCollection services,
-            string connectionString, string migrationAssembly)
+            string connectionString)
         {
             services.AddDbContext<MainDbContext>(options =>
-                options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationAssembly)));
+                options.UseSqlServer(connectionString, b => b.MigrationsAssembly("PackagesManagementDB")));
             services.AddIdentity<IdentityUser<int>, IdentityRole<int>>()
                 .AddEntityFrameworkStores<MainDbContext>()
                 .AddDefaultTokenProviders();
