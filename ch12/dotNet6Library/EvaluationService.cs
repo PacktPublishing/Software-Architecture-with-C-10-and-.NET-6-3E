@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Reflection;
 
 namespace dotNet6Library
 {
@@ -10,7 +9,7 @@ namespace dotNet6Library
     /// create the evaluated content
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class EvaluationService<T> where T : IContentEvaluated
+    public class EvaluationService<T> where T : IContentEvaluated, new()
     {
         /// <summary>
         /// The content is generic and totatly managed by the class
@@ -18,24 +17,13 @@ namespace dotNet6Library
         public T Content { get; set; }
 
         /// <summary>
-        /// The creation of the content to be evaluated will use reflection and the
-        /// generic definition from the class.
-        /// Notice that this code will work because all the classes are in the 
-        /// same assembly
+        /// A better approach, instead of using reflection
         /// </summary>
-        /// <param name="value"></param>
         public EvaluationService()
         {
-            var name = GetTypeOfEvaluation();
-            Content = (T)Assembly.GetExecutingAssembly().CreateInstance(name);
+            Content = new T();
         }
 
-        /// <summary>
-        /// This method is just used to get the type name of the generic one defined
-        /// </summary>
-        /// <returns></returns>
-        public string GetTypeOfEvaluation() =>
-            typeof(T).FullName;
 
         /// <summary>
         /// No matter the Evaluation, the calculation will always get values from the method CalculateGrade

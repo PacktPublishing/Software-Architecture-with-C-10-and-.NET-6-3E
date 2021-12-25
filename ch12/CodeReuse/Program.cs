@@ -22,6 +22,5 @@ var puEvaluation = new PrimeUsersEvaluation
 var service = new EvaluationService<CityEvaluation>();
 service.Content.Evaluations.Add(buEvaluation);
 service.Content.Evaluations.Add(puEvaluation);
-Console.WriteLine($"Type of evaluation: {service.GetTypeOfEvaluation()}");
 Console.WriteLine($"The final evaluation is {service.CalculateEvaluationAverage()}");
 Console.ReadKey();
