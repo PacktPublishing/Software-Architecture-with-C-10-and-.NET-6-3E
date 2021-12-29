@@ -9,7 +9,7 @@ namespace PackagesManagement.Queries
 {
     public interface IPackagesListQuery: IQuery
     {
-        Task<IEnumerable<PackageInfosViewModel>> GetAllPackages();
+        Task<IReadOnlyCollection<PackageInfosViewModel>> GetAllPackages();
         
     }
 }

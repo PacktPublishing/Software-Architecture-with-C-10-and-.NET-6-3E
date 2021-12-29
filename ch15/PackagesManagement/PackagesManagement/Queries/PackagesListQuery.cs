@@ -15,7 +15,7 @@ namespace PackagesManagement.Queries
         {
             this.ctx = ctx;
         }
-        public async Task<IEnumerable<PackageInfosViewModel>> GetAllPackages()
+        public async Task<IReadOnlyCollection<PackageInfosViewModel>> GetAllPackages()
         {
             return await ctx.Packages.Select(m => new PackageInfosViewModel
             {

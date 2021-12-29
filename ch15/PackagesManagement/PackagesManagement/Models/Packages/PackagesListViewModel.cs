@@ -7,6 +7,6 @@ namespace PackagesManagement.Models.Packages
 {
     public class PackagesListViewModel
     {
-        public IEnumerable<PackageInfosViewModel> Items { get; set; }
+        public IReadOnlyCollection<PackageInfosViewModel> Items { get; set; }
     }
 }

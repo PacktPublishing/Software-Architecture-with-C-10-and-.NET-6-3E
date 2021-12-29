@@ -14,15 +14,15 @@ namespace PackagesManagement.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser<int>> _userManager;
-        private readonly SignInManager<IdentityUser<int>> _signInManager;
+        private readonly UserManager<IdentityUser<int>> userManager;
+        private readonly SignInManager<IdentityUser<int>> signInManager;
 
         public AccountController(
             UserManager<IdentityUser<int>> userManager,
             SignInManager<IdentityUser<int>> signInManager)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
 
 
 
@@ -53,7 +53,7 @@ namespace PackagesManagement.Controllers
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(
+                var result = await signInManager.PasswordSignInAsync(
                     model.UserName, 
                     model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
@@ -77,7 +77,7 @@ namespace PackagesManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+            await signInManager.SignOutAsync();
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
