@@ -15,8 +15,7 @@ namespace PackagesManagementBlazor.Shared
         public int DestinationId { get; set; }
         public override string ToString()
         {
-            return string.Format("{0}. {1} days in {2}, price: {3}",
-                Name, DurationInDays, DestinationName, Price);
+            return $"{Name}. {DurationInDays} days in {DestinationName}, price: {Price}";
         }
     }
 }
