@@ -83,8 +83,7 @@ public class ProcessPurchases : BackgroundService
                     channel.BasicConsume(queue: "purchase_queue",
                                 autoAck: false,
                                 consumer: consumer);
-                    while (!stoppingToken.IsCancellationRequested)
-                        await Task.Delay(1000);
+                    await Task.Delay(1000, stoppingToken);
                 }
              }
             catch { }
