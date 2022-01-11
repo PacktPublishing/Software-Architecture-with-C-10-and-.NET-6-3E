@@ -1,15 +1,15 @@
 ﻿namespace WWTravelClubDBTest
 {
-    public class PackagesListDTO
+    public record PackagesListDTO
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int DurationInDays { get; set; }
-        public DateTime? StartValidityDate { get; set; }
-        public DateTime? EndValidityDate { get; set; }
-        public string DestinationName { get; set; }
-        public int DestinationId { get; set; }
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public decimal Price { get; init; }
+        public int DurationInDays { get; init; }
+        public DateTime? StartValidityDate { get; init; }
+        public DateTime? EndValidityDate { get; init; }
+        public string DestinationName { get; init; }
+        public int DestinationId { get; init; }
         public override string ToString()
         {
             return string.Format("{0}. {1} days in {2}, price: {3}", 

@@ -35,8 +35,7 @@ var firstDestination = new Destination
 context.Destinations.Add(firstDestination);
 await context.SaveChangesAsync();
 Console.WriteLine(
-    "DB populated: first destination id is " +
-    firstDestination.Id);
+    $"DB populated: first destination id is {firstDestination.Id}");
 Console.ReadKey();
 
 var toModify = await context.Destinations
@@ -55,8 +54,7 @@ var verifyChanges = await context.Destinations
         .FirstOrDefaultAsync();
 
 Console.WriteLine(
-    "New Florence description: " +
-    verifyChanges.Description);
+    $"New Florence description: {verifyChanges.Description}");
 Console.ReadKey();
 var period = new DateTime(2019, 8, 10);
 var list = await context.Packages
