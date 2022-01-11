@@ -8,36 +8,35 @@ Console.ReadKey();
 
 var context = new LibraryDesignTimeDbContextFactory()
     .CreateDbContext();
-var firstDestination = new Destination
-{
-    Name = "Florence",
-    Country = "Italy",
-    Packages = new List<Package>()
-    {
-        new Package
-        {
-            Name = "Summer in Florence",
-            StartValidityDate = new DateTime(2019, 6, 1),
-            EndValidityDate = new DateTime(2019, 10, 1),
-            DurationInDays=7,
-            Price=1000
-        },
-        new Package
-        {
-            Name = "Winter in Florence",
-            StartValidityDate = new DateTime(2019, 12, 1),
-            EndValidityDate = new DateTime(2020, 2, 1),
-            DurationInDays=7,
-            Price=500
-        }
-    }
-};
-context.Destinations.Add(firstDestination);
-await context.SaveChangesAsync();
-Console.WriteLine(
-    "DB populated: first destination id is " +
-    firstDestination.Id);
-Console.ReadKey();
+//var firstDestination = new Destination
+//{
+//    Name = "Florence",
+//    Country = "Italy",
+//    Packages = new List<Package>()
+//    {
+//        new Package
+//        {
+//            Name = "Summer in Florence",
+//            StartValidityDate = new DateTime(2019, 6, 1),
+//            EndValidityDate = new DateTime(2019, 10, 1),
+//            DurationInDays=7,
+//            Price=1000
+//        },
+//        new Package
+//        {
+//            Name = "Winter in Florence",
+//            StartValidityDate = new DateTime(2019, 12, 1),
+//            EndValidityDate = new DateTime(2020, 2, 1),
+//            DurationInDays=7,
+//            Price=500
+//        }
+//    }
+//};
+//context.Destinations.Add(firstDestination);
+//await context.SaveChangesAsync();
+//Console.WriteLine(
+//    $"DB populated: first destination id is {firstDestination.Id}");
+//Console.ReadKey();
 
 var toModify = await context.Destinations
     .Where(m => m.Name == "Florence")
@@ -55,8 +54,7 @@ var verifyChanges = await context.Destinations
         .FirstOrDefaultAsync();
 
 Console.WriteLine(
-    "New Florence description: " +
-    verifyChanges.Description);
+    $"New Florence description: {verifyChanges.Description}");
 Console.ReadKey();
 var period = new DateTime(2019, 8, 10);
 var list = await context.Packages
