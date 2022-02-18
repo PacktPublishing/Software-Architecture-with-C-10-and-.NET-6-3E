@@ -22,7 +22,7 @@ namespace CodeMetricsBadCode
         }
 
         /// <summary>
-        /// This code is being used just for explaning the concept of cyclomatic complexity. 
+        /// This code is being used just for explaining the concept of cyclomatic complexity. 
         /// It makes no sense at all. Please Calculate Code Metrics for understanding 
         /// </summary>
         private static void CyclomaticComplexitySample()
