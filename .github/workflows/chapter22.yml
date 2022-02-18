@@ -1,4 +1,4 @@
-name: .NET 6 Chapter 21
+name: .NET 6 Chapter 22
 on:
   push:
     branches:
@@ -17,8 +17,8 @@ jobs:
           include-prerelease: True
           dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
       - name: Install dependencies
-        run: dotnet restore ./ch21
+        run: dotnet restore ./ch22
       - name: Build
-        run: dotnet build ./ch21 --configuration Release --no-restore
+        run: dotnet build ./ch22 --configuration Release --no-restore
       - name: Test
-        run: dotnet test ./ch21 --no-restore --verbosity normal
+        run: dotnet test ./ch22 --no-restore --verbosity normal
