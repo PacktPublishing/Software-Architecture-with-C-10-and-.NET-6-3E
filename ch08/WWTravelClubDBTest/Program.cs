@@ -79,7 +79,7 @@ namespace WWTravelClubDBTest
                     StartValidityDate=m.StartValidityDate,
                     EndValidityDate=m.EndValidityDate,
                     Name=m.Name,
-                    DuratioInDays=m.DurationInDays,
+                    DurationInDays=m.DurationInDays,
                     Id=m.Id,
                     Price=m.Price,
                     DestinationName=m.MyDestination.Name
