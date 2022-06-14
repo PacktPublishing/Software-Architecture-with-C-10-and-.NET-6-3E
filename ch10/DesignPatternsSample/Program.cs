@@ -70,7 +70,7 @@ namespace DesignPatternsSample
 
             while (keepAsking)
             {
-                Console.WriteLine($"Your oppinion about {package.Name}:");
+                Console.WriteLine($"Your opinion about {package.Name}:");
                 Console.WriteLine("1 - Like");
                 Console.WriteLine("2 - Dislike");
                 Console.WriteLine("3 - Love");
