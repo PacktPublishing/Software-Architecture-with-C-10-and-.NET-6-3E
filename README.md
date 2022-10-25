@@ -20,3 +20,7 @@ By the end of this book, you will be able to build and deliver highly scalable e
 7. Implement microservices with ASP.NET Core in modern architectures
 8. Enrich your application with Artificial Intelligence
 9. Get the best of DevOps principles to enable CI/CD environments
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803235257">https://packt.link/free-ebook/9781803235257 </a> </p>
